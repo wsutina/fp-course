@@ -44,8 +44,8 @@ bindOptional ::
   (a -> Optional b)
   -> Optional a
   -> Optional b
-bindOptional =
-  error "todo: Course.Optional#bindOptional"
+bindOptional f (Full a) = f a
+bindOptional _ Empty = Empty
 
 -- | Return the possible value if it exists; otherwise, the second argument.
 --
