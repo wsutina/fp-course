@@ -105,8 +105,7 @@ product l = foldRight (*) 1 l
 sum ::
   List Int
   -> Int
-sum =
-  error "todo: Course.List#sum"
+sum l = foldLeft (+) 0 l
 
 -- | Return the length of the list.
 --
