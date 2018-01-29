@@ -114,8 +114,8 @@ void ::
   Functor f =>
   f a
   -> f ()
-void =
-  error "todo: Course.Functor#void"
+void fa = (const ()) <$> fa
+-- void = (const () <$>)
 
 -----------------------
 -- SUPPORT LIBRARIES --
