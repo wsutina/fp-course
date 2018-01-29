@@ -287,8 +287,7 @@ find _ Nil = Empty
 lengthGT4 ::
   List a
   -> Bool
-lengthGT4 =
-  error "todo: Course.List#lengthGT4"
+lengthGT4 l = length l > 4
 
 -- | Reverse a list.
 --
