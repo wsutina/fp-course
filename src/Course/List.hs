@@ -303,8 +303,7 @@ lengthGT4 l = length l > 4
 reverse ::
   List a
   -> List a
-reverse =
-  error "todo: Course.List#reverse"
+reverse l = foldLeft (\a b -> b :. a) Nil l
 
 -- | Produce an infinite `List` that seeds with the given value at its head,
 -- then runs the given function for subsequent elements
