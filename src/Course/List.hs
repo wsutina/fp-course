@@ -91,8 +91,7 @@ headOr a Nil = a
 product ::
   List Int
   -> Int
-product =
-  error "todo: Course.List#product"
+product l = foldRight (*) 1 l
 
 -- | Sum the elements of the list.
 --
