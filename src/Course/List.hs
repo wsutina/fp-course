@@ -213,8 +213,7 @@ flatMap f l = flatten (map f l)
 flattenAgain ::
   List (List a)
   -> List a
-flattenAgain =
-  error "todo: Course.List#flattenAgain"
+flattenAgain l = flatMap (\n -> n) l
 
 -- | Convert a list of optional values to an optional list of values.
 --
