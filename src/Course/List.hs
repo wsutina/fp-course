@@ -251,7 +251,9 @@ seqOptional ::
   List (Optional a)
   -> Optional (List a)
 seqOptional Nil = Full Nil
-seqOptional (h :. t) = comListOptional h (seqOptional t)
+seqOptional (h :. t) =
+  comListOptional h (seqOptional t)
+-- (\a -> mapOptaional (a:.) (seqOptional t)) h
 
 -- seqOptional l = foldRight (twiceOptional (:.)) (Full Nil)
 
