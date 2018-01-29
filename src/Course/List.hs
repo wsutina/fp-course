@@ -237,11 +237,16 @@ flattenAgain l = flatMap (\n -> n) l
 --
 -- >>> seqOptional (Empty :. map Full infinity)
 -- Empty
+comListOptional :: Optional a -> Optional (List a) -> Optional (List a)
+comListOptional (Full a) (Full l2) = Full (a :. l2)
+comListOptional Empty _ = Empty
+comListOptional _ Empty = Empty
+
 seqOptional ::
   List (Optional a)
   -> Optional (List a)
-seqOptional =
-  error "todo: Course.List#seqOptional"
+seqOptional Nil = Full Nil
+seqOptional (h :. t) = comListOptional h (seqOptional t)
 
 -- | Find the first element in the list matching the predicate.
 --
