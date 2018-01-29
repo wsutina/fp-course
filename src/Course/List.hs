@@ -253,6 +253,8 @@ seqOptional ::
 seqOptional Nil = Full Nil
 seqOptional (h :. t) = comListOptional h (seqOptional t)
 
+-- seqOptional l = foldRight (twiceOptional (:.)) (Full Nil)
+
 -- | Find the first element in the list matching the predicate.
 --
 -- >>> find even (1 :. 3 :. 5 :. Nil)
