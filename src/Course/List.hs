@@ -331,8 +331,7 @@ produce f x = x :. produce f (f x)
 notReverse ::
   List a
   -> List a
-notReverse =
-  error "todo: Is it even possible?"
+notReverse l = l
 
 ---- End of list exercises
 
