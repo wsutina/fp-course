@@ -189,6 +189,11 @@ flatten ::
 flatten Nil = Nil
 flatten (h :. t) = h ++ (flatten t)
 
+-- Monoid
+-- flatten = foldRight (++) Nil
+-- product = foldRight (*) 1
+-- sum = foldRight (+) 0
+
 -- | Map a function then flatten to a list.
 --
 -- >>> flatMap (\x -> x :. x + 1 :. x + 2 :. Nil) (1 :. 2 :. 3 :. Nil)
