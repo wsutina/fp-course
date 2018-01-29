@@ -69,8 +69,7 @@ instance Functor Optional where
     (a -> b)
     -> Optional a
     -> Optional b
-  (<$>) =
-    error "todo: Course.Functor (<$>)#instance Optional"
+  (<$>) f a = mapOptional f a
 
 -- | Maps a function on the reader ((->) t) functor.
 --
